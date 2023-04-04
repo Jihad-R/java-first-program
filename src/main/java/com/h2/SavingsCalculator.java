@@ -5,7 +5,7 @@ import java.time.YearMonth;
 
 public class SavingsCalculator {
     private float[] credits;
-    public float[] debits;
+    private float[] debits;
 
     public SavingsCalculator(float[] credits,float[] debits){
         this.credits = credits;
