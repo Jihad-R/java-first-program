@@ -3,17 +3,17 @@ package com.h2;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
-public class SavingCalculator {
+public class SavingsCalculator {
     private float[] credits;
     public float[] debits;
 
-    public SavingCalculator(float[] credits,float[] debits){
+    public SavingsCalculator(float[] credits,float[] debits){
         this.credits = credits;
         this.debits = debits;
 
     }
 
-    private float sumOfCredits(float[] credits){
+    private float sumOfCredits(){
         float sum = 0.0f;
         for(float credit: credits){
             sum += credit;
@@ -22,26 +22,24 @@ public class SavingCalculator {
         return sum;
     }
 
-    private float sumOfDebits(float[] debits){
+    private float sumOfDebits() {
         float sum = 0.0f;
-        for(float debit: debits){
+        for(float debit: debits) {
             sum += debit;
         }
-
         return sum;
     }
-
-    private static int remainingDaysInMonth(LocalDate date){
-        YearMonth yearMonth = YearMonth.of(date.getYear(),date.getMonth());
+    private static int remainingDaysInMonth(LocalDate date) {
+        YearMonth yearMonth = YearMonth.of(date.getYear(), date.getMonth());
         int totalDaysInMonth = yearMonth.lengthOfMonth();
-        int remainingDays = date.getDayOfMonth() - totalDaysInMonth;
+        int remainingDays = totalDaysInMonth - date.getDayOfMonth();
         return remainingDays;
     }
 
     public float calculate(){
 
 
-        return sumOfDebits(debits) - sumOfCredits(credits);
+        return sumOfDebits() - sumOfCredits();
     }
 
     public static void main(String[] args){
@@ -62,7 +60,7 @@ public class SavingCalculator {
 
         }
 
-        SavingCalculator calulator = new SavingCalculator(
+        final SavingsCalculator calulator = new SavingsCalculator(
                 credits,debits
         );
 
