@@ -38,8 +38,8 @@ public class SavingsCalculator {
 
     public float calculate(){
 
-
-        return sumOfDebits() - sumOfCredits();
+        float ans =  sumOfCredits();
+        return ans;
     }
 
     public static void main(String[] args){
