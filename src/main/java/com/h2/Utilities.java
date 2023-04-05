@@ -9,7 +9,7 @@ public class Utilities {
             out = Long.parseLong(in);
         }
         catch(NumberFormatException e){
-           throw new IllegalArgumentException(in + " cannot be converted into a 'long' value. Exiting program");
+           throw new IllegalArgumentException(in + " cannot be converted into a 'long' value. Exiting program.");
         }
         return out;
     }
@@ -30,7 +30,7 @@ public class Utilities {
     public static float getFloatValue(String in){
         float out = Float.MIN_VALUE;
         try{
-            out = Float.parseFloat(out);
+            out = Float.parseFloat(in);
         }
         catch(NumberFormatException e){
             throw new IllegalArgumentException(in + " cannot be converted into a 'float' value. Exiting program.");
