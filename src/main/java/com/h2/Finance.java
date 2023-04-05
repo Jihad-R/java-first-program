@@ -17,9 +17,8 @@ public class Finance {
             case "BEST_LOAN_RATES": return args.length == 1;
             case "SAVINGS_CALCULATOR": return args.length == 3;
             case "MORTGAGE_CALCULATOR": return args.length == 4;
-            default:
-                return false;
         }
+        return false;
     }
 
     private static void executeCommand(String command, String[] arguments){
@@ -49,8 +48,8 @@ public class Finance {
 
         boolean isValidCommand = validateCommandArguments(args);
 
-        if (isValidCommand){
-            commandsToUsage.get(args[0]);
+        if (!isValidCommand){
+            System.out.println(commandsToUsage.get(args[0]));
             return;
         }
 
