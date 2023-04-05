@@ -14,9 +14,9 @@ public class Finance {
                                                                      MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>");
     private static boolean validateCommandArguments(String[] args){
         switch (args[0]){
-            case "bestLoanRates": return args.length == 1;
-            case "savingsCalculator": return args.length == 3;
-            case "MortgageCalculator": return args.length == 4;
+            case "BEST_LOAN_RATES": return args.length == 1;
+            case "SAVINGS_CALCULATOR": return args.length == 3;
+            case "MORTGAGE_CALCULATOR": return args.length == 4;
             default:
                 return false;
         }
@@ -32,7 +32,7 @@ public class Finance {
                 System.out.println("Finding your net savings ...");
                 SavingsCalculator.main(arguments);
                 return;
-            case "MORTGAGE_CACULATOR":
+            case "MORTGAGE_CALCULATOR":
                 System.out.println("Finding your monthly payment ...");
                 MortgageCalculator.main(arguments);
                 return;
